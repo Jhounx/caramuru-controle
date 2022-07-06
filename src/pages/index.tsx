@@ -1,19 +1,16 @@
 import type {NextPage} from 'next'
-import {useState, useEffect} from 'react'
 import Head from 'next/head'
 import {Flex, Image, Text, Button, Tab, Tabs, TabList, TabPanels, TabPanel} from '@chakra-ui/react'
 import {useMainProvider} from '../components/MainProvider'
-import Controle from '../components/panels/Controle'
 import Telemetria from '../components/panels/Telemetria'
-import Constantes from '../components/panels/Constantes'
-import Pista from '../components/panels/Pista'
+
 
 const Home: NextPage = () => {
   const {connected, connecting, chara, connect, disconnect} = useMainProvider()
   return (
     <>
       <Head>
-        <title>Sariguê - Início</title>
+        <title>Caramuru - Início</title>
       </Head>
       <Flex
         height="100%"
@@ -31,14 +28,14 @@ const Home: NextPage = () => {
             height="100%"
             alignItems="center"
           >
-            <Image src="/icon.png" alt="Logo" width="50px" height="50px" marginLeft="15px" />
+            <Image src="/barco.png" alt="Logo" width="50px" height="50px" marginLeft="15px" />
             <Text
               as="h1"
               fontSize="24px"
               marginBottom="0px"
               marginLeft="15px"
             >
-              Sariguê - Painel de controle
+              Caramuru - Painel de controle
             </Text>
           </Flex>
           <Flex
@@ -62,30 +59,31 @@ const Home: NextPage = () => {
           alignItems="center"
           flexGrow="1"
         >
-          {(connected) && (
+          <Tabs
+                width="100%"
+                height="100%"
+              >
+                <TabList>
+                  <Tab>Telemetria</Tab>
+                </TabList>
+                <TabPanels>
+                  <TabPanel>
+                    <Telemetria />
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+          {/* {(connected) && (
             <>
               <Tabs
                 width="100%"
                 height="100%"
               >
                 <TabList>
-                  <Tab>Controle</Tab>
                   <Tab>Telemetria</Tab>
-                  <Tab>Constantes</Tab>
-                  <Tab>Pista</Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
-                    <Controle />
-                  </TabPanel>
-                  <TabPanel>
                     <Telemetria />
-                  </TabPanel>
-                  <TabPanel>
-                    <Constantes />
-                  </TabPanel>
-                  <TabPanel>
-                    <Pista />
                   </TabPanel>
                 </TabPanels>
               </Tabs>
@@ -96,9 +94,9 @@ const Home: NextPage = () => {
               color="#3182ce"
               fontSize="25px"
             >
-              Robô não conectado
+              Barco não conectado
             </Text>
-          )}
+          )} */}
         </Flex>
       </Flex>
     </>

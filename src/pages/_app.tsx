@@ -8,7 +8,7 @@ const MyApp = ({Component, pageProps}: AppProps) => {
   return (
     <ChakraProvider>
       <Head>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/barco.png" />
       </Head>
       <MainProvider>
         <Component {...pageProps} />
