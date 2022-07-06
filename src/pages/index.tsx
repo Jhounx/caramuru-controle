@@ -59,20 +59,7 @@ const Home: NextPage = () => {
           alignItems="center"
           flexGrow="1"
         >
-          <Tabs
-                width="100%"
-                height="100%"
-              >
-                <TabList>
-                  <Tab>Telemetria</Tab>
-                </TabList>
-                <TabPanels>
-                  <TabPanel>
-                    <Telemetria />
-                  </TabPanel>
-                </TabPanels>
-              </Tabs>
-          {/* {(connected) && (
+          {(connected) && (
             <>
               <Tabs
                 width="100%"
@@ -96,7 +83,7 @@ const Home: NextPage = () => {
             >
               Barco não conectado
             </Text>
-          )} */}
+          )} 
         </Flex>
       </Flex>
     </>
